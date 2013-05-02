@@ -1,0 +1,62 @@
+start: {headline}!
+
+headline: {person} TO WED {person}
+headline: {person} ANNOUNCES {issue} PLAN
+headline: {person} ESCAPES FROM {place}
+headline: {person} SPOTTED NEAR {place}
+headline: {person} DECRIES {issue}
+headline: {person} ATTACKS {place}
+headline: {issue} CLAIMS {person}
+headline: {person} SUES {person} OVER {issue}
+headline: {headline} AS {headline}
+headline: {headline} DESPITE {issue}
+headline: {place} SUCCUMBS TO {issue}
+
+person: OBAMA
+person: LOCAL TEACHER
+person: OLYMPIAN
+person: LADY GAGA
+person: RIHANNA
+person: BAT BOY
+person: DIANA ROSS
+person: CLINTON
+person: ELLEN DEGENERES
+person: PUTIN
+person: OPRAH
+person: WAITRESS
+person: SWIM COACH
+person: JUDO CHAMPION
+person: LOCH NESS MONSTER
+person: EINSTEIN
+person: TOOTH FAIRY
+person: JUSTIN BIEBER
+person: POPE
+
+place: FLORIDA
+place: EARTH
+place: MARS
+place: THE NORTH POLE
+place: LOCAL GAS STATION
+place: CLEVELAND
+place: VIENNA SAUSAGE FACTORY
+place: TURCK HALL
+place: MADAGASCAR
+place: SPAM MUSEUM
+place: {person}'S BASEMENT
+place: MALL OF AMERICA
+
+issue: CLIMATE CHANGE
+issue: GOLD TOOTH SHORTAGE
+issue: ALIEN INVASION
+issue: GOLD TOOTH SHORTAGE
+issue: ROAD IMPROVEMENTS
+issue: FLYING CAR
+issue: HUMAN CLONING
+issue: PUN PANDEMIC
+issue: SHOELACE COMBUSTION
+issue: DEFICIT REDUCTION
+issue: FASHION AWARENESS
+issue: VOTER TURNOUT
+issue: {person}'S PLASTIC SURGERY
+issue: {person}'S PREGNANCY
+issue: SECRET EXPERIMENT
