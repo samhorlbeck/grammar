@@ -16,7 +16,12 @@ public class Grammar {
      * @param symbol  The lookup key for the symbol (e.g. “person” in the example at the top of this class)
      */
     public Choice substitutionForSymbol(String symbol) {
-        throw new UnsupportedOperationException("Grammar.substitutionForSymbol() not implemented yet"); // TODO
+        if (symbol.equals("start")){
+        	return substitutionForSymbol("{headline}");
+        }
+        if (symbol.equals("{headline}")){
+        	
+        }
     }
     
     /**

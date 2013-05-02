@@ -5,18 +5,19 @@ package edu.macalester.cs124.grammar;
  */
 public class Literal implements Substitution {
     
+	private String value;
     /**
      * @param value The output of this generator.
      */
     public Literal(String value) {
-        throw new UnsupportedOperationException("Literal.Literal() not implemented yet"); // TODO
+    	this.value = value;
     }
     
     /**
-     * Appends this literal’s value to the content’s result.
+     * Appends this literal's value to the context's result.
      */
     @Override
     public void generate(GeneratorContext context) {
-        throw new UnsupportedOperationException("Literal.generate() not implemented yet"); // TODO
+        context.getResult().append(value);
     }
 }

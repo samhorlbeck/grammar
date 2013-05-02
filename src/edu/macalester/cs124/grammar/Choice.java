@@ -1,5 +1,8 @@
 package edu.macalester.cs124.grammar;
 
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * A multiple choice substitution. When generating content, objects of this class select one of
@@ -7,11 +10,12 @@ package edu.macalester.cs124.grammar;
  */
 public class Choice implements Substitution {
     
+	List<Substitution> subs = new ArrayList<Substitution>();
     /**
      * Adds the given substitutions to the existing list of choices.
      */
     public void addChoice(Substitution substitution) {
-        throw new UnsupportedOperationException("Choice.addChoice() not implemented yet"); // TODO
+        subs.add(substitution);
     }
     
     /**
@@ -20,6 +24,6 @@ public class Choice implements Substitution {
      */
     @Override
     public void generate(GeneratorContext context) {
-        throw new UnsupportedOperationException("Choice.generate() not implemented yet"); // TODO
+    	subs.get(context.getRandom().nextInt(subs.size())).generate(context);
     }
 }
