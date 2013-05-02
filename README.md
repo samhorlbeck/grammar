@@ -1,7 +1,7 @@
 Comp 124: Grammar Lab
 ====
 
-Remember the [headline generator](https://github.com/Macalester-CS124-2013-S/class-exercises/blob/master/src/edu/macalester/cs124/HeadlineGenerator.java) from earlier in the semester? It works all right, but have everything hard-coded is not ideal. There is a lot of useless text — repeated `case` and `return` statements — and because the argument to rand.nextInt() must match the number of cases, adding a new choice to one of the methods is quite error-prone!
+Remember the [headline generator](https://github.com/Macalester-CS124-2013-S/class-exercises/blob/master/src/edu/macalester/cs124/HeadlineGenerator.java) from earlier in the semester? It works all right, but having everything hard-coded is not ideal. There is a lot of useless text — repeated `case` and `return` statements — and because the argument to rand.nextInt() must match the number of cases, adding a new choice to one of the methods is quite error-prone!
 
 Wouldn’t it be nice to have a a friendly, concise, purpose-specific file format? In other words, instead of this:
 
@@ -13,13 +13,13 @@ Wouldn’t it be nice to have a a friendly, concise, purpose-specific file forma
         }
     }
   
-…we’d rather have this:
+…wouldn’t you rather have this?
 
     headline: {person} TO WED {person}
     headline: {person} ANNOUNCES {issue} PLAN
     headline: {person} ESCAPES FROM {place}
 
-In this lab, we’ll build the code to do this.
+In this lab, we’ll build it.
 
 You have a head start: I have already written the parsing code for the file format, and included a sample input file (headlines.grammar). I’ve also laid out a class structure. Your job is to understand that class structure, then fill in the missing pieces.
 
