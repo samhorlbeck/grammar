@@ -1,86 +1,38 @@
-Comp 124: Homework 4
+Comp 124: Grammar Lab
 ====
 
+Remember the [headline generator](https://github.com/Macalester-CS124-2013-S/class-exercises/blob/master/src/edu/macalester/cs124/HeadlineGenerator.java) from earlier in the semester? It works all right, but the way it is all hard-coded is not ideal. There is a lot of useless text — repeated case and return statements — and because the argument to rand.nextInt() must match the number of cases, adding a new choice to one of the methods is quite error-prone!
 
-The Game of Ghost (30 points)
----
+Wouldn’t it be nice to have a a friendly, concise, purpose-specific file format? In other words, instead of this:
 
-Implement the [game of Ghost](http://en.wikipedia.org/wiki/Ghost_\(game\)).
+    public String headline() {
+        switch(rand.nextInt(3)) {
+            case  1: return person() + " TO WED " + person();
+            case  2: return person() + " ANNOUNCES " + issue() + " PLAN";
+            default: return person() + " ESCAPES FROM " + place();
+        }
+    }
+  
+…we’d rather have this:
 
-This assignment is meant as a breather after Breakout, and a warm-up for the final homework, so I've given you a head start! GhostProgram already implements the rules of the game. There are a few things missing that will give you a little more practice (1) working with collections and (2) decomposing a problem by creating a new class. Here's what you need to do:
+    headline: {person} TO WED {person}
+    headline: {person} ANNOUNCES {issue} PLAN
+    headline: {person} ESCAPES FROM {place}
 
-### 1. Implement the dictionary
+In this lab, we’ll do exactly that.
 
-The project includes a dictionary file. The Dictionary class has a snippet of code that demonstrates how to read words from that file — but it is otherwise unimplemented. Implement all the empty methods.
+I have already written the parsing code for the file format above, and included a sample input file (headlines.grammar). I’ve also laid out a class structure. Your job is to understand that class structure, then fill in the missing pieces.
 
-Dictionary should do its heavy lifting on initialization; the methods isWord() and isPrefixOfWord() should be very efficient. Think about what data structure(s) you can use and what work you can do in the Dictionary constructor to make that happen.
+When you arrive in the lab, I will explain the class structure at the board. Then, do the usual drill one last time:
 
-### 2. Keep track of strikes
+  * Find a partner.
+  * Fork this repository.
+  * Clone it to your lab machine.
 
-The code currently tracks the names of the players, but not how many strikes each one has. Create a new Player class that tracks both the player name and the number of strikes against them, and change GhostProgram so it keeps a list of Players instead of a list of Strings. Then add code to print out the score after each round.
+…and go through the code to implement the missing methods. (Look for the "not implemented yet" exceptions.)
 
-### Keep it simple!
+You will have to think carefully about how you want to approach this! You can’t use GrammarParser and my sample input file until there are now missing pieces. Will you try to implement _everything_ before you test _anything?_ (You might get a long way down the wrong path!) Or will you devise a strategy for testing small pieces? (That takes extra time!)
 
-This assignment requires some thought, but it does not require much code. The methods you add will all be short; many — most! — of them should be just a single line long. If you find yourself creating a long and complex method, look for simplifications.
+Once you have the pieces working, experiment with the headlines file, or create a different grammar altogether.
 
-As always, ask Nick and me for help early and often!
-
-### Example output
-
-When you're all done, gameplay should look like this:
-
-    Reading dictionary...
-    Dictionary contains 270163 words with 593708 prefixes.
-
-    How many players? 3
-    Player 0 name: Sally
-    Player 1 name: Harold
-    Player 2 name: Justine
-
-    Sally, your move: a
-    A
-    Harold, your move: asdf
-    You must enter exactly one letter.
-    Harold, your move: 
-    You must enter exactly one letter.
-    Harold, your move: q
-    AQ
-    Justine, your move: u
-    AQU
-    Sally, your move: x
-    No words in the dictionary begin with "AQUX". Please try another letter.
-    Sally, your move: e
-    AQUE
-    Harold, your move: o
-    AQUEO
-    Justine, your move: u
-    AQUEOU
-    Sally, your move: l
-    No words in the dictionary begin with "AQUEOUL". Please try another letter.
-    Sally, your move: s
-    AQUEOUS
-    That's a word! One strike against Sally.
-
-    Sally: 1 strike
-    Harold: 0 strikes
-    Justine: 0 strikes
-
-    Harold, your move: a
-    A
-    Justine, your move: n
-    AN
-    Sally, your move: t
-    ANT
-    Harold, your move: o
-    ANTO
-    Justine, your move: n
-    ANTON
-    Sally, your move: y
-    ANTONY
-    Harold, your move: m
-    ANTONYM
-    That's a word! One strike against Harold.
-
-    Sally: 1 strike
-    Harold: 1 strike
-    Justine: 0 strikes
+__Challenge:__ If you are feeling adventurous, modify the code so that it won’t reuse the same choice within a headline (i.e. prevent “ELVIS TO WED ELVIS”).
